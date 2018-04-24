@@ -19,7 +19,7 @@ var replacements = {
 tags = tags.parse(process.argv, defaults, replacements);
 
 if (tags.help) {
-  console.log("Usage: ./app.js -q=query [-d=depth] [-p=path]");
+  console.log("Usage: searchfile -q=query [-d=depth] [-p=path]");
 } else {
   search.scan(tags.path, tag search.match(tags.query,files).forEach(
     function(file){
