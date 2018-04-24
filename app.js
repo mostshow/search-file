@@ -1,4 +1,4 @@
-# !/usr/bin/env node
+#!/usr/bin/env node
 
 var tags = require("./lib/tags.js");
 var search = require("./lib/search.js");
@@ -19,10 +19,11 @@ var replacements = {
 tags = tags.parse(process.argv, defaults, replacements);
 
 if (tags.help) {
-  console.log("Usage: searchfile -q=query [-d=depth] [-p=path]");
+   console.log("Usage: ./app.js -q=query [-d=depth] [-p=path]");
 } else {
-  search.scan(tags.path, tag search.match(tags.query,files).forEach(
-    function(file){
-      console.log(file);
-    });
-});
+   search.scan(tags.path, tags.depth, function(err, files) {
+       search.match(tags.query, files).forEach(function(file){
+           console.log(file);
+       });
+   });
+}
