@@ -1,6 +1,6 @@
 {
-  "name": "searchfile",
-  "version": "0.0.1",
+  "name": "search-files",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "url": "git://github.com/mostshow/search-file.git"
   },
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^5.1.1"
   }
