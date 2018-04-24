@@ -1,0 +1,23 @@
+{
+  "name": "searchFile",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "release": "npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+  },
+  "bin": {
+    "searchFile": "./app.js"
+  },
+  "author": "lyn",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mostshow/drfile.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^5.1.1"
+  }
+}
