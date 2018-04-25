@@ -13,6 +13,9 @@ describe("Search", function(){
                fs.writeFileSync(".test_files/dir/c", "");
                fs.mkdirSync(".test_files/dir2");
                fs.writeFileSync(".test_files/dir2/d", "");
+               fs.mkdirSync(".test_files/dir2/dir3");
+               fs.writeFileSync(".test_files/dir2/dir3/z", "");
+
            }
        });
 
@@ -22,7 +25,8 @@ describe("Search", function(){
                    ".test_files/a",
                    ".test_files/b",
                    ".test_files/dir/c",
-                   ".test_files/dir2/d"
+                   ".test_files/dir2/d",
+                   ".test_files/dir2/dir3/z"
                ]);
                done();
            });
@@ -39,6 +43,8 @@ describe("Search", function(){
        after(function() {
            fs.unlinkSync(".test_files/dir/c");
            fs.rmdirSync(".test_files/dir");
+           fs.unlinkSync(".test_files/dir2/dir3/z");
+           fs.rmdirSync(".test_files/dir2/dir3");
            fs.unlinkSync(".test_files/dir2/d");
            fs.rmdirSync(".test_files/dir2");
            fs.unlinkSync(".test_files/a");
